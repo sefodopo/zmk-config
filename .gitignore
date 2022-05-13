@@ -1,0 +1,6 @@
+build
+corne_left.uf2
+corne_right.uf2
+build.sh
+CMakeCache.txt
+CMakeFiles
