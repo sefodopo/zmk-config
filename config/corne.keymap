@@ -54,10 +54,9 @@
                 combo_qwerty {
                         key-positions = <13 14 15 16 36 37 38>;
                         bindings = <&to GAME_LAYER>;
-                        layers = <0>;
                 };
                 combo_unqwerty {
-                        key-positions = <13 14 15 16 36 37 38>;
+                        key-positions = <25 26 27 28 36 37 38>;
                         bindings = <&to 0>;
                         layers = <GAME_LAYER GANP_LAYER>;
                 };
@@ -109,15 +108,15 @@
                 
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |       |---| Cal              | 7 | 8 | 9 |      |     |
-// |      |     |     |     |     |       |---| Space            | 4 | 5 | 6 | Bspc |     |
-// |      |     |     |     |     |       |---|                  | 1 | 2 | 3 |      |     |
-//                    |     |     |       |---| ENT/multi | 0 | . |
+// |      |     |     | Undo | Redo  |  |---| / | 7 | 8 | 9 | - | Cal |
+// |      |     | Cut | Copy | Paste |  |---| * | 4 | 5 | 6 | + |     |
+// |      |     |     |      |       |  |---| 0 | 1 | 2 | 3 | . |     |
+//                             |  |  |  |---|  |   |  |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans     &kp C_AL_CALC &kp N7 &kp N8 &kp N9 &trans   &trans
-   &trans &trans &trans &trans &trans &trans     &kp SPACE     &kp N4 &kp N5 &kp N6 &kp BSPC &trans
-   &trans &trans &trans &trans &trans &trans     &trans        &kp N1 &kp N2 &kp N3 &trans   &trans
-                   &trans   &trans   &trans       &trans         &kp N0 &kp DOT
+   &trans &trans &trans    &kp LC(Z) &kp LC(Y) &trans     &kp FSLH        &kp N7 &kp N8 &kp N9 &kp MINUS &kp C_AL_CALC
+   &trans &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans     &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp BSPC  &trans
+   &trans &trans &trans    &trans    &trans    &trans     &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+                            &trans   &trans   &trans       &trans   &trans   &trans
                         >;
                 };
 
@@ -137,29 +136,29 @@
 
                 media_layer {
 // -----------------------------------------------------------------------------------------
-// | F1  | F2  | F3  | F4   | F5   | F6  | ----- | PgUp | Home | PgDn | End   | Prev |       |
-// | F7  | F8  | F9  | F10  | F11  | F12 | ----- | Left | Down | Up   | Right |      |       |
-// | F13 | F14 | F15 | F16  | F17  | F18 | ----- | PlPu | Vol- | Vol+ | MUTE  | Next |  |
+// | F1  | F2  | F3  | F4   | F5   | F6  | ----- | PgUp | Home | PgDn | End   | Prev | PrtScn  |
+// | F7  | F8  | F9  | F10  | F11  | F12 | ----- | Left | Down | Up   | Right |      | ScnSnip |
+// | F13 | F14 | F15 | F16  | F17  | F18 | ----- | PlPu | Vol- | Vol+ | MUTE  | Next | Menu    |
 //                   | CTRL | SHFT | ALT | ----- |       |      |      |
                         bindings = <
-  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &kp PG_UP  &kp HOME     &kp PG_DN    &kp END    &kp C_PREV &trans
-  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &trans     &trans
-  &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18     &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_NEXT &trans
+  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &kp PG_UP  &kp HOME     &kp PG_DN    &kp END    &kp C_PREV &kp PSCRN
+  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &trans     &kp LG(LS(S))
+  &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18     &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_NEXT &kp K_APP
                       &kp LCTRL &kp LSHFT &kp LALT    &trans &trans &trans
                         >;
                 };
 
-                qwerty_layer {  // Used for gaming
+                qwerty_layer {  // Used for gaming Currently Satisfactory
 // -----------------------------------------------------------------------------------------
 // | ESC  | O     | Q | W | E | R | ----- | VolUp | BriUp | N | 9 | 6 | 3 |
 // | TAB  | Shift | A | S | D | F | ----- | VolDn | BriDn | P | 8 | 5 | 2 |
 // | M    | Z     | X | C | V | B | ----- |       |       | 0 | 7 | 4 | 1 |
-//                | Ctrl | Space | Alt | ----- | Num |  |  |
+//                | Ctrl | Space | Alt | ----- | Num | Copy | Paste |
                         bindings = <
   &kp ESC   &kp O     &kp Q &kp W &kp E &kp R     &kp C_VOL_UP &kp F15 &kp N  &kp N9 &kp N6 &kp N3
   &kp TAB   &kp LSHFT &kp A &kp S &kp D &kp F     &kp C_VOL_DN &kp F14 &kp P  &kp N8 &kp N5 &kp N2
   &kp M     &kp Z     &kp X &kp C &kp V &kp B     &none        &none   &kp N0 &kp N7 &kp N4 &kp N1
-            &kp LCTRL &kp SPACE &kp LALT         &tog GANP_LAYER &none &none
+            &kp LCTRL &kp SPACE &kp LALT         &tog GANP_LAYER &kp LC(C) &kp LC(V)
                         >;
                 };
 
