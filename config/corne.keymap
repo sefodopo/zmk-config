@@ -14,7 +14,6 @@
 #define SYM_LAYER 3
 #define MEDIA_LAYER 4
 #define GAME_LAYER 5
-#define GANP_LAYER 6
 
 / {
         combos {
@@ -51,14 +50,13 @@
                         key-positions = <17 39 40 41>;
                         bindings = <&out OUT_USB>;
                 };
-                combo_qwerty {
+                combo_game {
                         key-positions = <13 14 15 16 36 37 38>;
                         bindings = <&to GAME_LAYER>;
                 };
-                combo_unqwerty {
+                combo_ungame {
                         key-positions = <25 26 27 28 36 37 38>;
                         bindings = <&to 0>;
-                        layers = <GAME_LAYER GANP_LAYER>;
                 };
         };
 
@@ -122,15 +120,15 @@
 
                 syms_layer { 
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |---|  ^  |   &   |  *  |  (  |  )  |      |
-// | CTRL |     |     |     |     |     |---|  -  |   =   |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |---|  _  |   +   |  {  |  }  | "|" |  ~   |
-//                    |     |     |     |---| ENT | SPACE | BKSP |
+// |   |     |  _  |  -  |  +  |  *  |---|  ^  |   &   |  (  |  )  |  *  |   \  |
+// |   |  !  |  @  |  #  |  $  |  %  |---|  -  |   =   |  [  |  ]  |  `  |   |  |
+// |   |     |     |     |     |     |---|  _  |   +   |  {  |  }  |  ~  |      |
+//                 |     |     |     |---| ENT | SPACE | BKSP |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                           &trans   &trans   &trans      &kp RET   &kp SPACE   &kp BSPC
+   &trans &trans            &kp UNDER &kp MINUS &kp PLUS   &kp KP_MULTIPLY     &kp CARET &kp AMPS  &kp LPAR &kp RPAR &kp KP_MULTIPLY &kp BSLH
+   &trans &kp EXCLAMATION   &kp AT    &kp POUND &kp DOLLAR &kp PERCENT         &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp GRAVE       &kp PIPE
+   &trans &trans            &trans    &trans    &trans     &trans              &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp TILDE       &trans
+                                                     &trans &trans &trans      &kp RET &kp SPACE &kp BSPC
                         >;
                 };
 
@@ -148,31 +146,45 @@
                         >;
                 };
 
-                qwerty_layer {  // Used for gaming Currently Satisfactory
-// -----------------------------------------------------------------------------------------
-// | ESC  | O     | Q | W | E | R | ----- | VolUp | BriUp | N | 9 | 6 | 3 |
-// | TAB  | Shift | A | S | D | F | ----- | VolDn | BriDn | P | 8 | 5 | 2 |
-// | M    | Z     | X | C | V | B | ----- |       |       | 0 | 7 | 4 | 1 |
-//                | Ctrl | Space | Alt | ----- | Num | Copy | Paste |
+                gaming_layer {
+// ------------------------------------------------------------------------------------------
+// | ESC |  |  |   |   |  | --- |  |  |  |  |  |  |
+// | Tab |  |  | S | T |  | --- |  |  |  |  |  |  |
+// | --- |  |  |   |   |  | --- |  |  |  |  |  |  |
+//   | Ctrl | Shift | Alt | --- |  |  |  |
                         bindings = <
-  &kp ESC   &kp O     &kp Q &kp W &kp E &kp R     &kp C_VOL_UP &kp F15 &kp N  &kp N9 &kp N6 &kp N3
-  &kp TAB   &kp LSHFT &kp A &kp S &kp D &kp F     &kp C_VOL_DN &kp F14 &kp P  &kp N8 &kp N5 &kp N2
-  &kp M     &kp Z     &kp X &kp C &kp V &kp B     &none        &none   &kp N0 &kp N7 &kp N4 &kp N1
-            &kp LCTRL &kp SPACE &kp LALT         &tog GANP_LAYER &kp LC(C) &kp LC(V)
+  &kp ESC       &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+  &kp TAB       &trans &trans &kp S  &kp T  &trans    &trans &trans &trans &trans &trans &trans
+  &mo NUM_LAYER &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+                     &kp LCTRL &kp LSHIFT &kp LALT    &trans &trans &trans
                         >;
                 };
 
-                qwerty_numpad {
-// |  |  |  |  |  |  | ----- |  | Bksp | 9 | 6 | 3 | RET |
-// |  |  |  |  |  |  | ----- |  | *    | 8 | 5 | 2 | .   |
-// |  |  |  |  |  |  | ----- |  | /    | 7 | 4 | 1 | 0   |
-//          |  |  |  | ----- | QWERT | - | + |
-                        bindings = <
-  &trans &trans &trans &trans &trans &trans    &trans &kp BSPC        &kp N9 &kp N6 &kp N3 &kp RET
-  &trans &trans &trans &trans &trans &trans    &trans &kp KP_MULTIPLY &kp N8 &kp N5 &kp N2 &kp DOT
-  &trans &trans &trans &trans &trans &trans    &trans &kp KP_DIVIDE   &kp N7 &kp N4 &kp N1 &kp N0
-                       &trans &trans &trans    &trans &kp KP_MINUS &kp KP_PLUS
-                       >;
-                };
-        };
+//                 qwerty_layer {  // Used for gaming Currently Satisfactory
+// // -----------------------------------------------------------------------------------------
+// // | ESC  | O     | Q | W | E | R | ----- | VolUp | BriUp | N | 9 | 6 | 3 |
+// // | TAB  | Shift | A | S | D | F | ----- | VolDn | BriDn | P | 8 | 5 | 2 |
+// // | M    | Z     | X | V | C | B | ----- |       |       | 0 | 7 | 4 | 1 |
+// //                | Ctrl | Space | Alt | ----- | Num | Copy | Paste |
+//                         bindings = <
+//   &kp ESC   &kp O     &kp Q &kp W &kp E &kp R     &kp C_VOL_UP &kp F15 &kp N  &kp N9 &kp N6 &kp N3
+//   &kp TAB   &kp LSHFT &kp A &kp S &kp D &kp F     &kp C_VOL_DN &kp F14 &kp P  &kp N8 &kp N5 &kp N2
+//   &kp M     &kp Z     &kp X &kp V &kp C &kp B     &none        &none   &kp N0 &kp N7 &kp N4 &kp N1
+//             &kp LCTRL &kp SPACE &kp LALT         &tog GANP_LAYER &kp LC(C) &kp LC(V)
+//                         >;
+//                 };
+
+//                 qwerty_numpad {
+// // |  |  |  |  |  |  | ----- |  | Bksp | 9 | 6 | 3 | RET |
+// // |  |  |  |  |  |  | ----- |  | *    | 8 | 5 | 2 | .   |
+// // |  |  |  |  |  |  | ----- |  | /    | 7 | 4 | 1 | 0   |
+// //          |  |  |  | ----- | QWERT | - | + |
+//                         bindings = <
+//   &trans &trans &trans &trans &trans &trans    &trans &kp BSPC        &kp N9 &kp N6 &kp N3 &kp RET
+//   &trans &trans &trans &trans &trans &trans    &trans &kp KP_MULTIPLY &kp N8 &kp N5 &kp N2 &kp DOT
+//   &trans &trans &trans &trans &trans &trans    &trans &kp KP_DIVIDE   &kp N7 &kp N4 &kp N1 &kp N0
+//                        &trans &trans &trans    &trans &kp KP_MINUS &kp KP_PLUS
+//                        >;
+//                 };
+         };
 };
