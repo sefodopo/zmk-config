@@ -71,6 +71,14 @@
                         bindings = <&kp>, <&kp>;
                         global-quick-tap;
                 };
+                llt: left_layer_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LEFT_THUMB_LAYER_TAP";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
+                        bindings = <&mo>, <&kp>;
+                };
         };
 
         keymap {
@@ -86,7 +94,7 @@
    &lt STICKY_LAYER ESC &kp Q &kp W &kp F      &kp P       &kp B     &kp J &kp L        &kp U          &kp Y   &kp SEMI &kp BSLH
    &lt MEDIA_LAYER TAB  &kp A &kp R &hm LALT S &hm LCTRL T &kp G     &kp M &hm RCTRL N  &hm RALT E     &kp I   &kp O    &kp SQT
    &kp LGUI             &kp Z &kp X &kp C      &kp D       &kp V     &kp K &kp H        &kp COMMA      &kp DOT &kp FSLH &kp DEL
-     &lt NUM_LAYER BSPC  &mt LSHFT SPACE   &lt SYM_LAYER SPACE       &lt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
+     &llt NUM_LAYER BSPC  &mt LSHFT SPACE   &llt SYM_LAYER SPACE       &lt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
                         >;
                 };
 
@@ -95,7 +103,7 @@
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
-//     | Num | DEFAULT | SYM | ----- | IA |  |  |
+//     | Num | DEFAULT | SYM | ----- | MEDIA |  |  |
                         bindings = <
   &trans  &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
   &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
