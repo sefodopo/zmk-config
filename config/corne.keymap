@@ -46,6 +46,20 @@
                 };
         };
 
+        macros {
+                lambda: lambda {
+                        label = "Lambda";
+                        compatible = "zmk,behavior-macro";
+                        wait-ms = <20>;
+                        #binding-cells = <0>;
+                        bindings
+                            = <&kp EQUAL>
+                            , <&kp GT>
+                            , <&kp SPACE>
+                            ;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -59,7 +73,7 @@
    &lt STICKY_LAYER ESC &kp Q &kp W &kp F      &kp P       &kp B     &kp J &kp L        &kp U          &kp Y   &kp SEMI &kp BSLH
    &lt MEDIA_LAYER TAB  &kp A &kp R &hm LALT S &hm LCTRL T &kp G     &kp M &hm RCTRL N  &hm RALT E     &kp I   &kp O    &kp SQT
    &kp LGUI             &kp Z &kp X &kp C      &kp D       &kp V     &kp K &kp H        &kp COMMA      &kp DOT &kp FSLH &kp DEL
-     &llt NUM_LAYER BSPC  &mt LSHFT SPACE   &llt SYM_LAYER SPACE       &lt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
+     &llt NUM_LAYER BSPC  &mt LSHFT SPACE   &llt SYM_LAYER SPACE       &llt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
                         >;
                 };
 
@@ -95,12 +109,12 @@
 // -----------------------------------------------------------------------------------------
 // |   |     |  _  |  -  |  +  |  *  |---|  ^  |   &   |  (  |  )  |  *  |   \  |
 // |   |  !  |  @  |  #  |  $  |  %  |---|  -  |   =   |  [  |  ]  |  `  |   |  |
-// |   |     |     |     |     |     |---|  _  |   +   |  {  |  }  |  ~  |      |
+// |   |     |     |     |     |     |---|  _  |   +   |  {  |  }  |  ~  |  =>  |
 //                 |     |     |     |---| ENT | SPACE | BKSP |
                         bindings = <
    &trans &trans            &kp UNDER &kp MINUS &kp PLUS   &kp KP_MULTIPLY     &kp CARET &kp AMPS  &kp LPAR &kp RPAR &kp KP_MULTIPLY &kp BSLH
    &trans &kp EXCLAMATION   &kp AT    &kp POUND &kp DOLLAR &kp PERCENT         &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp GRAVE       &kp PIPE
-   &trans &trans            &trans    &trans    &trans     &trans              &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp TILDE       &trans
+   &trans &trans            &trans    &trans    &trans     &trans              &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp TILDE       &lambda
                                                      &trans &trans &trans      &kp RET &kp SPACE &kp BSPC
                         >;
                 };
@@ -162,14 +176,14 @@
 
                         blu_layer {
 // ------------------------------------------------------------------------
-// | 0   | 1 | 2 | 3 | 4 | CLR | === | 0   | 1 | 2 | 3 | 4 | CLR |
-// | BLU |   |   |   |   | USB | === | USB |   |   |   |   | BLU |
-// | DL  |   |   |   |   | GL  | === | DL  |   |   |   |   | GL  |
+// | 0   | 1 | 2 | 3 | 4     | CLR | === | 0   | 1     | 2 | 3 | 4 | CLR |
+// | BLU |   |   |   | Reset | USB | === | USB | Reset |   |   |   | BLU |
+// | DL  |   |   |   | Boot  | GL  | === | DL  | Boot  |   |   |   | GL  |
 //                       | | | | === | | | |
                                 bindings = <
   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-  &out OUT_BLE &none        &none        &none        &none        &out OUT_USB       &out OUT_USB &none        &none        &none        &none        &out OUT_BLE
-  &to 0        &none        &none        &none        &none        &to GAME_LAYER     &to 0        &none        &none        &none        &none        &to GAME_LAYER
+  &out OUT_BLE &none        &none        &none        &reset       &out OUT_USB       &out OUT_USB &reset       &none        &none        &none        &out OUT_BLE
+  &to 0        &none        &none        &none        &bootloader  &to GAME_LAYER     &to 0        &bootloader  &none        &none        &none        &to GAME_LAYER
                                                                 &none &none &none     &none &none &none
                                 >;
                         };
