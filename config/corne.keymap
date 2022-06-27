@@ -14,49 +14,14 @@
 #define SYM_LAYER 3
 #define MEDIA_LAYER 4
 #define GAME_LAYER 5
+#define BLU_LAYER 6
 
 / {
         combos {
                 compatible = "zmk,combos";
-                combo_bl0 {
-                        key-positions = <0 39 40 41>;
-                        bindings = <&bt BT_SEL 0>;
-                };
-                combo_bl1 {
-                        key-positions = <1 39 40 41>;
-                        bindings = <&bt BT_SEL 1>;
-                };
-                combo_bl2 {
-                        key-positions = <2 39 40 41>;
-                        bindings = <&bt BT_SEL 2>;
-                };
-                combo_bl3 {
-                        key-positions = <3 39 40 41>;
-                        bindings = <&bt BT_SEL 3>;
-                };
-                combo_bl4 {
-                        key-positions = <4 39 40 41>;
-                        bindings = <&bt BT_SEL 4>;
-                };
-                combo_BtClr {
-                        key-positions = <5 39 40 41>;
-                        bindings = <&bt BT_CLR>;
-                };
-                combo_BtOut {
-                        key-positions = <12 39 40 41>;
-                        bindings = <&out OUT_BLE>;
-                };
-                combo_UsbOut {
-                        key-positions = <17 39 40 41>;
-                        bindings = <&out OUT_USB>;
-                };
-                combo_game {
-                        key-positions = <13 14 15 16 36 37 38>;
-                        bindings = <&to GAME_LAYER>;
-                };
-                combo_ungame {
-                        key-positions = <25 26 27 28 36 37 38>;
-                        bindings = <&to 0>;
+                combo_blu {
+                        key-positions = <9 10 11>;
+                        bindings = <&sl BLU_LAYER>;
                 };
         };
 
@@ -194,5 +159,19 @@
 //                        &trans &trans &trans    &trans &kp KP_MINUS &kp KP_PLUS
 //                        >;
 //                 };
+
+                        blu_layer {
+// ------------------------------------------------------------------------
+// | 0   | 1 | 2 | 3 | 4 | CLR | === | 0   | 1 | 2 | 3 | 4 | CLR |
+// | BLU |   |   |   |   | USB | === | USB |   |   |   |   | BLU |
+// | DL  |   |   |   |   | GL  | === | DL  |   |   |   |   | GL  |
+//                       | | | | === | | | |
+                                bindings = <
+  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
+  &out OUT_BLE &none        &none        &none        &none        &out OUT_USB       &out OUT_USB &none        &none        &none        &none        &out OUT_BLE
+  &to 0        &none        &none        &none        &none        &to GAME_LAYER     &to 0        &none        &none        &none        &none        &to GAME_LAYER
+                                                                &none &none &none     &none &none &none
+                                >;
+                        };
          };
 };
