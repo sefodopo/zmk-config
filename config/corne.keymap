@@ -58,7 +58,7 @@
                 lambda: lambda {
                         label = "Lambda";
                         compatible = "zmk,behavior-macro";
-                        wait-ms = <20>;
+                        wait-ms = <1>;
                         #binding-cells = <0>;
                         bindings
                             = <&kp EQUAL>
