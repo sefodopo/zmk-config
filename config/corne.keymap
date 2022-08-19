@@ -56,7 +56,7 @@
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_GUI";
                         #binding-cells = <0>;
-                        bindings = <&kp GUI>, <&caps_word>;
+                        bindings = <&kp LGUI>, <&caps_word>;
                         mods = <(MOD_LSFT)>;
                 };
         };
