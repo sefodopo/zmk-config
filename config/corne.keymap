@@ -52,7 +52,7 @@
                         tapping-term-ms = <200>;
                         bindings = <&mo>, <&kp>;
                 };
-                shift_gui {
+                shgui: shift_gui {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_GUI";
                         #binding-cells = <0>;
@@ -87,7 +87,7 @@
                         bindings = <
    &lt STICKY_LAYER ESC &kp Q &kp W &kp F      &kp P       &kp B     &kp J &kp L        &kp U          &kp Y   &kp SEMI &kp BSLH
    &lt MEDIA_LAYER TAB  &kp A &kp R &hm LALT S &hm LCTRL T &kp G     &kp M &hm RCTRL N  &hm RALT E     &kp I   &kp O    &kp SQT
-   &shift_gui           &kp Z &kp X &kp C      &kp D       &kp V     &kp K &kp H        &kp COMMA      &kp DOT &kp FSLH &kp DEL
+   &shgui               &kp Z &kp X &kp C      &kp D       &kp V     &kp K &kp H        &kp COMMA      &kp DOT &kp FSLH &kp DEL
      &llt NUM_LAYER BSPC  &mt LSHFT SPACE   &llt SYM_LAYER SPACE       &rlt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
                         >;
                 };
