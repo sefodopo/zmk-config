@@ -73,6 +73,17 @@
                             , <&kp SPACE>
                             ;
                 };
+                tritab: tritab {
+                        label = "Triple Tab";
+                        compatible = "zmk,behavior-macro";
+                        wait-ms = <10>;
+                        #binding-cells = <0>;
+                        bindings
+                            = <&kp TAB>
+                            , <&kp TAB>
+                            , <&kp TAB>
+                            ;
+                };
         };
 
         keymap {
@@ -109,13 +120,13 @@
                 num_layer {
 // -----------------------------------------------------------------------------------------
 // |      |     |     | Undo | Redo  |  |---| / | 7 | 8 | 9 | - | Cal |
-// |      |     | Cut | Copy | Paste |  |---| * | 4 | 5 | 6 | + |     |
+// | 3Tab |     | Cut | Copy | Paste |  |---| * | 4 | 5 | 6 | + |     |
 // |      |     |     |      |       |  |---| 0 | 1 | 2 | 3 | . |     |
 //                             |  |  |  |---|  |   |  |
                         bindings = <
-   &trans &trans &trans    &kp LC(Z) &kp LC(Y) &trans     &kp FSLH        &kp N7 &kp N8 &kp N9 &kp MINUS &kp C_AL_CALC
-   &trans &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans     &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp PLUS  &trans
-   &trans &trans &trans    &trans    &trans    &trans     &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+   &trans  &trans &trans    &kp LC(Z) &kp LC(Y) &trans     &kp FSLH        &kp N7 &kp N8 &kp N9 &kp MINUS &kp C_AL_CALC
+   &tritab &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans     &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp PLUS  &trans
+   &trans  &trans &trans    &trans    &trans    &trans     &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT   &trans
                             &trans   &trans   &trans       &trans   &trans   &trans
                         >;
                 };
