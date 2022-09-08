@@ -147,12 +147,12 @@
 
                 media_layer {
 // -----------------------------------------------------------------------------------------
-// | F1  | F2  | F3  | F4   | F5   | F6  | ----- | Home | PgUp | PgDn | End   | Prev | PrtScn  |
+// | F1  | F2  | F3  | F4   | F5   | F6  | ----- | Home | PgDn | PgUp | End   | Prev | PrtScn  |
 // | F7  | F8  | F9  | F10  | F11  | F12 | ----- | Left | Down | Up   | Right |      | ScnSnip |
 // | F13 | F14 | F15 | F16  | F17  | F18 | ----- | PlPu | Vol- | Vol+ | MUTE  | Next | Menu    |
 //                   | CTRL | SHFT | ALT | ----- |       |      |      |
                         bindings = <
-  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &kp HOME   &kp PG_UP    &kp PG_DN    &kp END    &kp C_PREV &kp PSCRN
+  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6      &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_PREV &kp PSCRN
   &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12     &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &trans     &kp LG(LS(S))
   &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18     &kp C_PP   &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_NEXT &kp K_APP
                       &kp LCTRL &kp LSHFT &kp LALT    &trans &trans &trans
