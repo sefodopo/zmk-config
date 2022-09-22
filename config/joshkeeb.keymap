@@ -23,6 +23,10 @@
                         key-positions = <10 11>;
                         bindings = <&sl BLU_LAYER>;
                 };
+                combo_blu1 {
+                        key-positions = <0 1>;
+                        bindings = <&sl BLU_LAYER>;
+                };
         };
 
         behaviors {
@@ -84,6 +88,18 @@
                             , <&kp TAB>
                             ;
                 };
+                zyspeedup: zyspeedup {
+                        label = "Zybooks Speedup";
+                        compatible = "zmk,behavior-macro";
+                        wait-ms = <10>;
+                        #binding-cells = <0>;
+                        bindings
+                            = <&kp SPACE>
+                            , <&kp TAB>
+                            , <&kp SPACE>
+                            , <&kp LS(TAB)>
+                            ;
+                };
         };
 
         keymap {
@@ -119,15 +135,15 @@
                 
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     | Undo | Redo  |  |---| / | 7 | 8 | 9 | - | Cal |
-// | 3Tab |     | Cut | Copy | Paste |  |---| * | 4 | 5 | 6 | + |     |
-// |      |     |     |      |       |  |---| 0 | 1 | 2 | 3 | . |     |
+// |      |           |     | Undo | Redo  |  |---| / | 7 | 8 | 9 | - | Cal |
+// | 3Tab | zyspeedup | Cut | Copy | Paste |  |---| * | 4 | 5 | 6 | + |     |
+// |      |           |     |      |       |  |---| 0 | 1 | 2 | 3 | . |     |
 //                             |  |  |  |---|  |   |  |
                         bindings = <
-   &trans  &trans &trans    &kp LC(Z) &kp LC(Y) &trans     &kp FSLH        &kp N7 &kp N8 &kp N9 &kp MINUS &kp C_AL_CALC
-   &tritab &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans     &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp PLUS  &trans
-   &trans  &trans &trans    &trans    &trans    &trans     &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT   &trans
-                            &trans   &trans   &trans       &trans   &trans   &trans
+   &trans  &trans     &trans    &kp LC(Z) &kp LC(Y) &trans     &kp FSLH        &kp N7 &kp N8 &kp N9 &kp MINUS &kp C_AL_CALC
+   &tritab &zyspeedup &kp LC(X) &kp LC(C) &kp LC(V) &trans     &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp PLUS  &trans
+   &trans  &trans     &trans    &trans    &trans    &trans     &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT   &trans
+                                 &trans   &trans   &trans       &trans   &trans   &trans
                         >;
                 };
 
