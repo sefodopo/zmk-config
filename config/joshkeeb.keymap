@@ -185,7 +185,7 @@
   &kp ESC       &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
   &kp TAB       &trans &trans &kp S  &kp T  &trans    &trans &trans &trans &trans &trans &trans
   &mo NUM_LAYER &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
-                              &trans &trans &trans    &trans &trans &trans
+                      &kp LCTRL &kp LSHFT &kp LALT    &trans &trans &trans
                         >;
                 };
 
