@@ -2,9 +2,11 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: sefodopo
+      url-base: https://github.com/sefodopo
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: sefodopo
       revision: main
       import: app/west.yml
   self:
