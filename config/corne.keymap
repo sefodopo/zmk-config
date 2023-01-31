@@ -20,11 +20,11 @@
         combos {
                 compatible = "zmk,combos";
                 combo_blu {
-                        key-positions = <10 11>;
+                        key-positions = <6 11>;
                         bindings = <&sl BLU_LAYER>;
                 };
                 combo_blu1 {
-                        key-positions = <0 1>;
+                        key-positions = <0 5>;
                         bindings = <&sl BLU_LAYER>;
                 };
         };
