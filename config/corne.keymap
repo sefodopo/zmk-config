@@ -124,12 +124,12 @@
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
 // |  |  |  |  |  |  | ----- |  |  |  |  |  |  |
-//     | Num | DEFAULT | SYM | ----- | MEDIA |  |  |
+//     | Num | DEFAULT | SYM | ----- | MEDIA | SCROLL | SCROLL |
                         bindings = <
   &trans  &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
   &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
   &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
-          &to NUM_LAYER &to 0 &to SYM_LAYER     &to MEDIA_LAYER &trans &trans
+          &to NUM_LAYER &to 0 &to SYM_LAYER     &to MEDIA_LAYER &kp SLCK &kp SLCK
                         >;
                 };
                 
