@@ -107,14 +107,14 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | Esc/Sticky  |  Q  |  W  |  F      |  P       |  B    |---|  J |  L     |  U      |  Y  |  ;  | \   |
-// | Tab/multi   |  A  |  R  |  S/Alt  |  T/Ctrl  |  G    |---|  M | N/Ctrl |  E/Alt  |  I  |  O  | '   |
-// | GUI/CapWord |  Z  |  X  |  C      |  D       |  V    |---|  K |  H     |  ,      |  .  |  /  | DEL |
+// | Esc/Sticky  |  B  |  L  |  D      |  C       |  V    |---|  J |  F     |  O      |  U  |  ;  | \   |
+// | Tab/multi   |  N  |  R  |  T/Alt  |  S/Ctrl  |  G    |---|  Y | H/Ctrl |  A/Alt  |  E  |  I  | '   |
+// | GUI/CapWord |  X  |  Q  |  M      |  W       |  Z    |---|  K |  P     |  ,      |  .  |  /  | DEL |
 //                  | Num/Bksp | Space/Shft | Space/Sym |---| ENT/multi | SPACE | BKSP |
                         bindings = <
-   &lt STICKY_LAYER ESC &kp Q &kp W &kp F      &kp P       &kp B     &kp J &kp L        &kp U          &kp Y   &kp SEMI &kp BSLH
-   &lt MEDIA_LAYER TAB  &kp A &kp R &hm LALT S &hm LCTRL T &kp G     &kp M &hm RCTRL N  &hm RALT E     &kp I   &kp O    &kp SQT
-   &shgui               &kp Z &kp X &kp C      &kp D       &kp V     &kp K &kp H        &kp COMMA      &kp DOT &kp FSLH &kp DEL
+   &lt STICKY_LAYER ESC &kp B &kp L &kp D      &kp C       &kp V     &kp J &kp F        &kp O          &kp U   &kp SEMI &kp BSLH
+   &lt MEDIA_LAYER TAB  &kp N &kp R &hm LALT T &hm LCTRL S &kp G     &kp Y &hm RCTRL H  &hm RALT A     &kp E   &kp I    &kp SQT
+   &shgui               &kp X &kp Q &kp M      &kp W       &kp Z     &kp K &kp P        &kp COMMA      &kp DOT &kp FSLH &kp DEL
      &llt NUM_LAYER BSPC  &mt LSHFT SPACE   &llt SYM_LAYER RET       &rlt MEDIA_LAYER RET   &kp SPACE   &kp BSPC
                         >;
                 };
