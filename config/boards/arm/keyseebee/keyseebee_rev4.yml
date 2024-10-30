@@ -1,0 +1,11 @@
+file_format: "1"
+id: keyseebee_rev4
+name: Keyseebee Rev4
+type: board
+arch: arm
+features:
+  - keys
+  - encoder
+outputs:
+  - usb
+url: https://github.com/Sefodopo/keyseebee
