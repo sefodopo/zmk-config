@@ -1,0 +1,13 @@
+# keeb.io BDN9 board configuration
+
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config BOARD_KEYSEEBEE_LEFT
+    bool "keyseebee_left"
+    depends on SOC_STM32F072XB
+
+config BOARD_KEYSEEBEE_RIGHT
+    bool "keyseebee_right"
+    depends on SOC_STM32F072XB
+

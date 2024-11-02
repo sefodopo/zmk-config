@@ -1,0 +1,12 @@
+file_format: "1"
+id: cosmotyl
+name: Cosmotyl
+type: shield
+url: "https://ryanis.cool/cosmos/beta#cm:Co0BChESBRCQQSATEgJAAxIAODFAAAoPEgUQkE0gExIAEgA4HUAAChUSBRCQWSATEgASAxCwLzgJQIDwvAIKEhIFEJBlIBMSABIDELA7OApAAAoTEgUQkHEgExIAEgA4HkCAhorABwoYEhIIEBAwQJeFvMegUEi4i7il4FA4RUAAGABA6IWgrvBVSNjworABCooBCisSExDAgAJAgICYAkjCmaCVkLwBUEMSEkCAgMwCSMKZoJWQvAFQhgFYOjgIChUSEBBAQICAIEjQlYDdkPUDUAtQngIKJxIQEEBAgID4AUjmmfynkAtQVxIRQICApANI8JnEtdAwUHRYlQFQfxgCIgoIyQEQyAEYACAAQMuL/J/QMUitkdyNwZMGEAIYiSA4AoIBCAAA1AJGKAoCWEhoAA=="
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
+siblings:
+  - cosmotyl_left
+  - cosmotyl_right

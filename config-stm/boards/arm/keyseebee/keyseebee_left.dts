@@ -1,0 +1,33 @@
+#include "keyseebee.dtsi"
+
+/{
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+
+        input-gpios
+            = <&gpiob 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 15  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 15  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 14  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 10  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpiob 11  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 7  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 5  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&gpioa 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
+    };
+};

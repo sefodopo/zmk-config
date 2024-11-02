@@ -1,10 +1,13 @@
 file_format: "1"
-id: keyseebee_rev4
-name: Keyseebee Rev4
+id: keyseebee
+name: Keyseebee
 type: board
 arch: arm
 outputs:
   - usb
+siblings:
+  - keyseebee_left
+  - keyseebee_right
 features:
   - keys
   - encoder

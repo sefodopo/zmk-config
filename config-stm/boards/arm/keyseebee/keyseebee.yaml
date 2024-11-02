@@ -1,6 +1,6 @@
 identifier: keyseebee
-name: Keyseebee Rev4
-type: mcu
+name: Keyseebee
+type: keyboard
 arch: arm
 toolchain:
   - zephyr
@@ -10,5 +10,3 @@ ram: 40
 supported:
   - encoders
   - switches
-    #- underglow
-  - per_key

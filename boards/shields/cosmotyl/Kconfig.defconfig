@@ -1,0 +1,19 @@
+if SHIELD_COSMOTYL_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Cosmotyl"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_STUDIO
+  default n
+
+endif
+
+if SHIELD_COSMOTYL_LEFT || SHIELD_COSMOTYL_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1730045389,
-        "narHash": "sha256-4spSNTZ6h8Xmvrr9oqfuxc9jarasGj1QOcsgw8BfNd8=",
+        "lastModified": 1730272153,
+        "narHash": "sha256-B5WRZYsRlJgwVHIV6DvidFN7VX7Fg9uuwkRW9Ha8z+w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0fcb98acb6633445764dafe180e6833eb0f95208",
+        "rev": "2d2a9ddbe3f2c00747398f3dc9b05f7f2ebb0f53",
         "type": "github"
       },
       "original": {
@@ -19,7 +19,8 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "zmk-nix": "zmk-nix"
+        "zmk-nix": "zmk-nix",
+        "zmk-nix-stm": "zmk-nix-stm"
       }
     },
     "zmk-nix": {
@@ -29,14 +30,37 @@
         ]
       },
       "locked": {
-        "dirtyRev": "1ceefd4eff92f9f6f56bb467beef35d38d9e9a12-dirty",
-        "dirtyShortRev": "1ceefd4-dirty",
-        "lastModified": 1729989359,
-        "narHash": "sha256-zni3GomzrO+6QRsIuOMAsrKOpZS7oZ08chhz5b1S0Ac=",
+        "lastModified": 1730351092,
+        "narHash": "sha256-ubu6/qcqx2aTGtwFJeoQ7Eom6CVdJNtS7LWSZ04hC6s=",
+        "owner": "lilyinstarlight",
+        "repo": "zmk-nix",
+        "rev": "39f09453fb433c1a1798d6b8a1c52198c4163edd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lilyinstarlight",
+        "ref": "main",
+        "repo": "zmk-nix",
+        "type": "github"
+      }
+    },
+    "zmk-nix-stm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1730326485,
+        "narHash": "sha256-Bvel8CogwawpviOfaH0q5rS3ckNXfL0dNkhvKq4evrs=",
+        "ref": "bin",
+        "rev": "df377b2c249d104a3bc8b861dabef7dc09d23f5a",
+        "revCount": 185,
         "type": "git",
         "url": "file:///home/joshua/src/zmk-nix"
       },
       "original": {
+        "ref": "bin",
         "type": "git",
         "url": "file:///home/joshua/src/zmk-nix"
       }

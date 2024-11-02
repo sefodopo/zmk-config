@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#undef ZMK_BEHAVIORS_KEEP_ALL
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp A  &kp B  &kp C  &kp D  &kp E  &kp F                       &kp LS(A)  &kp LS(B)  &kp LS(C)  &kp LS(D)  &kp LS(E)  &kp LS(F)
+                &kp G  &kp H  &kp I  &kp J  &kp K  &kp L                       &kp LS(G)  &kp LS(H)  &kp LS(I)  &kp LS(J)  &kp LS(K)  &kp LS(L)
+                &kp M  &kp N  &kp O  &kp P  &kp Q  &kp R  &kp S     &kp LS(M)  &kp LS(N)  &kp LS(O)  &kp LS(P)  &kp LS(Q)  &kp LS(R)  &kp LS(S)
+                                     &kp T  &kp U  &kp V  &kp W     &kp LS(T)  &kp LS(U)  &kp LS(V)  &kp LS(W)
+            >;
+            sensor-bindings = <&inc_dec_kp X Y>;
+        };
+    };
+};
+
