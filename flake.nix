@@ -64,7 +64,7 @@
               "right"
             ];
 
-            zephyrDepsHash = "sha256-MmcNiC+mqGf/O01vFhR982iHGcnaaSCv+DzPpuK2+Hk=";
+            zephyrDepsHash = "sha256-vHoFIxnmxoA5LIv910h3rh1VLr1GGS7gf7X7E3idJHs=";
           }
         );
         flash-stm = zmk-nix-stm.packages.${system}.flash.override { inherit firmware; };
@@ -76,12 +76,13 @@
             board = "nice_nano_v2";
             shield = "cosmotyl_%PART%";
             parts = [
+              "dongle"
               "left"
               "right"
             ];
             #enableZmkStudio = true;
 
-            zephyrDepsHash = "sha256-MmcNiC+mqGf/O01vFhR982iHGcnaaSCv+DzPpuK2+Hk=";
+            zephyrDepsHash = "sha256-vHoFIxnmxoA5LIv910h3rh1VLr1GGS7gf7X7E3idJHs=";
           }
         );
         flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
