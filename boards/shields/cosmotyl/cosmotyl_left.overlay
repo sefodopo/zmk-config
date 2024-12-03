@@ -6,7 +6,3 @@
 
 #include "cosmotyl.dtsi"
 #include "kscan.dtsi"
-
-&left_encoder {
-  status = "okay";
-};

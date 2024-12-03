@@ -64,7 +64,7 @@
               "right"
             ];
 
-            zephyrDepsHash = "sha256-vHoFIxnmxoA5LIv910h3rh1VLr1GGS7gf7X7E3idJHs=";
+            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
           }
         );
         flash-stm = zmk-nix-stm.packages.${system}.flash.override { inherit firmware; };
@@ -82,7 +82,17 @@
             ];
             #enableZmkStudio = true;
 
-            zephyrDepsHash = "sha256-vHoFIxnmxoA5LIv910h3rh1VLr1GGS7gf7X7E3idJHs=";
+            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
+          }
+        );
+
+        firmware-reset = zmk-nix.legacyPackages.${system}.buildKeyboard (
+          baseFirmware
+          // {
+            board = "nice_nano_v2";
+            shield = "settings_reset";
+
+            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
           }
         );
         flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };

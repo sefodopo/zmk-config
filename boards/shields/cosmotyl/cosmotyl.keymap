@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #define DEFAULT 0
 #define STICKY  1
@@ -39,6 +41,20 @@
       flavor = "balanced";
       tapping-term-ms = <200>;
       bindings = <&mo>, <&kp>;
+    };
+    sticky_shift: sticky_shift {
+      compatible = "zmk,behavior-sticky-key";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      release-after-ms = <1000>;
+      quick-release;
+      ignore-modifiers;
+    };
+    std: shift_tap_dance {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&sticky_shift LSHIFT>, <&caps_word>;
     };
   };
 
@@ -78,21 +94,19 @@
    &kp B &kp L &kp D      &kp C       &kp V              &kp J &kp F       &kp O      &kp U   &kp SEMI
    &hm LGUI N &kp R &hm LALT T &hm LCTRL S &kp G              &kp Y &hm LCTRL H &hm LALT A &kp E   &hm LGUI I   
    &kp X &kp Q &kp M      &kp W       &kp Z              &kp K &kp P       &kp COMMA  &kp DOT &kp FSLH
-         &llt NUMBER DEL &kp LSHIFT &llt SYMBOL LGUI         &rlt MEDIA RET &kp SPACE &kp BSPC
-      &kp C_PP &llt NUMBER ESC &llt STICKY TAB     &rlt MEDIA RET &kp SQT &kp C_PP
+         &llt NUMBER DEL &std &llt SYMBOL TAB         &rlt MEDIA RET &kp SPACE &kp BSPC
+          &llt NUMBER ESC &llt STICKY LGUI     &kp BSLH &kp SQT
       >;
-      sensor-bindings = <&inc_dec_kp C_NEXT C_NEXT &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     sticky_layer {
       bindings = <
    &to NUMBER &to SYMBOL &to MEDIA &to GAME &bootloader            &bootloader &trans &trans &trans &trans
-   &trans &trans &trans &trans &sys_reset             &sys_reset  &trans &trans &trans &trans
-   &trans &trans &trans &trans &trans                 &trans  &trans &trans &trans &trans
+   &ext_power EP_OFF &trans &trans &trans   &sys_reset             &sys_reset  &trans &trans &trans &trans
+   &bt BT_CLR &out OUT_BLE &out OUT_USB &trans &trans                 &trans  &trans &trans &trans &trans
                  &to NUMBER &to SYMBOL &to DEFAULT       &trans &trans &trans
-            &trans          &trans     &trans  &to MEDIA &trans &trans
+                            &trans     &trans  &to MEDIA &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     number_layer {
@@ -101,9 +115,8 @@
    &trans &kp LC(X) &kp LC(C) &kp LC(V) &trans               &kp KP_MULTIPLY &kp N4 &kp N5 &kp N6 &kp KP_PLUS 
    &trans &trans    &trans    &trans    &trans               &kp N0          &kp N1 &kp N2 &kp N3 &kp DOT     
                               &trans    &trans &trans     &kp C_AL_CALC &trans &trans
-                    &trans    &trans    &trans            &trans &trans &trans
+                              &trans    &trans            &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     symbol_layer {
@@ -111,10 +124,9 @@
    &trans          &kp UNDER &kp MINUS &kp PLUS   &kp STAR                 &kp CARET &kp AMPS  &kp LPAR &kp RPAR &kp STAR 
    &kp EXCLAMATION &kp AT    &kp POUND &kp DOLLAR &kp PERCENT              &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp GRAVE
    &trans          &trans    &trans    &trans     &trans                   &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp TILDE
-                                       &trans     &trans &trans         &kp BSLH &trans &trans
-                             &trans               &trans &trans         &trans &trans &trans
+                                       &trans     &trans &trans         &trans &trans &trans
+                                                  &trans &trans         &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     media_layer {
@@ -123,9 +135,8 @@
    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10              &kp LEFT  &kp DOWN     &kp UP       &kp RIGHT  &trans    
    &kp F11 &kp F12 &kp F13 &kp F14 &kp F15              &kp C_PP  &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_NEXT
                            &trans  &trans &trans    &trans &trans &trans
-                   &trans  &trans  &trans           &trans &trans &trans
+                           &trans  &trans           &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     game_layer {
@@ -134,9 +145,8 @@
    &trans &trans &kp T  &kp S      &trans                &trans &trans &trans &trans &trans
    &trans &trans &trans &trans     &trans                &trans &trans &trans &trans &trans
                         &kp LCTRL  &kp LALT &trans    &trans &trans &trans
-                 &trans &kp LSHIFT &gaming_numpad     &trans &trans &trans
+                        &kp LSHIFT &gaming_numpad     &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
     gamesup_layer {
@@ -145,9 +155,8 @@
    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5              &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
                         &trans &trans &trans    &trans &trans &trans
-                 &trans &trans &trans           &trans &trans &trans
+                        &trans &trans           &trans &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 
   };
