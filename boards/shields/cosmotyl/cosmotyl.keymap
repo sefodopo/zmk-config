@@ -54,7 +54,14 @@
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
       tapping-term-ms = <200>;
-      bindings = <&sticky_shift LSHIFT>, <&caps_word>;
+      bindings = <&kp LSHIFT>, <&caps_word>;
+    };
+    lsmm: left_symbol_mod_morph {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&llt SYMBOL TAB>, <&kp UNDER>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
   };
 
@@ -81,7 +88,7 @@
         , <&macro_press &mo GAMESUP>
         , <&macro_pause_for_release>
         , <&macro_release &mo GAMESUP>
-        , <&macro_release &mo GAMESUP>
+        , <&macro_release &mo NUMBER>
         ;
     };
   };
@@ -94,7 +101,7 @@
    &kp B &kp L &kp D      &kp C       &kp V              &kp J &kp F       &kp O      &kp U   &kp SEMI
    &hm LGUI N &kp R &hm LALT T &hm LCTRL S &kp G              &kp Y &hm LCTRL H &hm LALT A &kp E   &hm LGUI I   
    &kp X &kp Q &kp M      &kp W       &kp Z              &kp K &kp P       &kp COMMA  &kp DOT &kp FSLH
-         &llt NUMBER DEL &std &llt SYMBOL TAB         &rlt MEDIA RET &kp SPACE &kp BSPC
+         &llt NUMBER DEL &std &lsmm               &rlt MEDIA RET &kp SPACE &kp BSPC
           &llt NUMBER ESC &llt STICKY LGUI     &kp BSLH &kp SQT
       >;
     };
