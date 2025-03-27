@@ -64,7 +64,7 @@
               "right"
             ];
 
-            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
+            zephyrDepsHash = "sha256-1nMZWSEmDuUWoYvsUE4eV5fBAD6kNFw0ZHF3jDKwpLg=";
           }
         );
         flash-stm = zmk-nix-stm.packages.${system}.flash.override { inherit firmware; };
@@ -82,7 +82,7 @@
             ];
             #enableZmkStudio = true;
 
-            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
+            zephyrDepsHash = "sha256-1nMZWSEmDuUWoYvsUE4eV5fBAD6kNFw0ZHF3jDKwpLg=";
           }
         );
 
@@ -92,7 +92,7 @@
             board = "nice_nano_v2";
             shield = "settings_reset";
 
-            zephyrDepsHash = "sha256-yzMlvkK2Flo5+Dc4ShzEZ0jl1w4v0P/YDoxbpMDIXgs=";
+            zephyrDepsHash = "sha256-1nMZWSEmDuUWoYvsUE4eV5fBAD6kNFw0ZHF3jDKwpLg=";
           }
         );
         flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
